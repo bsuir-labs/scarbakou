@@ -1,3 +1,1 @@
 # BSUIR labs
-
-Test

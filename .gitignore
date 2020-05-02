@@ -171,3 +171,7 @@ build*/
 # C++ Builder shit
 *.~*
 *.tds
+
+# VS shit
+
+.vs

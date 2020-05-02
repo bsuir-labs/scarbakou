@@ -58,7 +58,6 @@ int  main(int argc, char* argv[])
 
         saveTest(matr, result, test);
         std::cout << "Test #" << test << "; Result: " << result << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 
@@ -72,8 +71,14 @@ IncidenceMatrix fromAdjacency(const AdjacencyMatrix &matrix)
             if (!matrix[v1][v2]) continue;
 
             std::vector<int> edge(size);
-            edge[v1] = 1;
-            edge[v2] = -1;
+
+            if (v1 != v2)
+            {
+                edge[v1] = 1;
+                edge[v2] = -1;
+            } else {
+                edge[v1] = 2;
+            }
             edges.emplace_back(std::move(edge));
         }
 
@@ -91,8 +96,8 @@ void saveTest(const T_adj_matr &matrix, const std::string &result, const unsigne
     std::ofstream fout_in;
     std::ofstream fout_out;
 
-    static const std::string PREFIX_INPUT = "in-";
-    static const std::string PREFIX_OUTPUT = "out-";
+    static const std::string PREFIX_INPUT = "input-";
+    static const std::string PREFIX_OUTPUT = "output-";
     static const std::string POSTFIX_COMM = ".txt";
 
     std::string input_filename = PREFIX_INPUT + std::to_string(test_case_number) + POSTFIX_COMM;

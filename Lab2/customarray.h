@@ -18,6 +18,7 @@ class CustomArray
 
 public:
     CustomArray();
+    CustomArray(const CustomArray &arr);
     CustomArray(unsigned size);
     ~CustomArray();
 
@@ -28,7 +29,7 @@ public:
     void pop_back();
     void clear();
 
-    void resize(unsigned size);
+    void resize(unsigned int size);
     void sort();
     void insertKeepSorted(int element);
 
@@ -37,8 +38,10 @@ public:
     static CustomArray Unite(const CustomArray &arrl, const CustomArray &arrr);
     static CustomArray Cross(const CustomArray &arrl, const CustomArray &arrr);
 
-    int& operator[](unsigned x);
-    const int& operator[](unsigned x) const;
+    int& operator[](unsigned int x);
+    const int& operator[](unsigned int x) const;
+    const CustomArray& operator=(const CustomArray& arr);
+    const CustomArray& operator=(CustomArray&& arr);
 };
 
 #endif // CUSTOMARRAY_H

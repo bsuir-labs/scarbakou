@@ -7,6 +7,12 @@ CustomArray::CustomArray()
     , m_size(0)
 {}
 
+CustomArray::CustomArray(const CustomArray & arr)
+    : CustomArray()
+{
+    *this = arr;
+}
+
 CustomArray::CustomArray(unsigned size)
 {
     m_data_size = nearestPower(size);
@@ -151,6 +157,27 @@ int& CustomArray::operator[](unsigned int x)
 const int& CustomArray::operator[](unsigned int x) const
 {
     return m_data[x];
+}
+
+const CustomArray & CustomArray::operator=(const CustomArray & arr)
+{
+    if (&arr == this) return *this;
+    this->clear();
+    this->resize(arr.size());
+    for (unsigned i = 0; i < arr.size(); ++i)
+        m_data[i] = arr[i];
+    return *this;
+}
+
+const CustomArray & CustomArray::operator=(CustomArray && arr)
+{
+    if (&arr == this) return *this;
+    this->clear();
+    this->m_data = arr.m_data;
+    this->m_size = arr.m_size;
+    this->m_data_size = arr.m_data_size;
+    arr.m_data = nullptr;
+    return *this;
 }
 
 CustomArray CustomArray::Unite(const CustomArray &arrl, const CustomArray &arrr)

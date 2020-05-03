@@ -73,7 +73,7 @@ void CustomArray::insertKeepSorted(int element)
 
 int CustomArray::indexOf(int element)
 {
-    int l = 0, r = m_size;
+    int l = 0, r = m_size - 1;
     while (l < r)
     {
         int mid = (l + r) / 2;

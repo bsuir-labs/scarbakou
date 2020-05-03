@@ -1,10 +1,6 @@
 #ifndef EXAMPLE_H
 #define EXAMPLE_H
 
-/////////////////////////////////////////////////////////////////////////////////////////
-//Написать программу, которая будет определять вид графа, а именно : транзитивен\не транзитивен\
-//частично транзитивен. граф задается матрицей смежности, матрица считывается из текстового файла.
-/////////////////////////////////////////////////////////////////////////////////////////
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
@@ -182,7 +178,6 @@ int check_transitivity_of_graph(T_adj_matr & adj_matr)
                 {
                     continue;
                 }
-                //Утверждение. Существуют ребра v1v2 и v2v3.
                 if  (
                         adj_matr[v1][v3] != 0
                     )
@@ -213,8 +208,6 @@ int check_transitivity_of_graph(T_adj_matr & adj_matr)
         )
     {
         return 0;
-//        std::cout   <<  "Graph is transitive, because there's no ways from two nodes."
-//                    <<  std::endl;
     }
     else
     {
@@ -223,128 +216,19 @@ int check_transitivity_of_graph(T_adj_matr & adj_matr)
                 &&  !not_trans_mes   .empty()
             )
         {
-//            std::cout   <<  "Graph is partly transitive:"
-//                        <<  std::endl
-//                        <<  "\transitivity:\t\t- "
-//                        <<  trans_mes
-//                        <<  std::endl
-//                        <<  "\non-transitivity\t- "
-//                        <<  not_trans_mes
-//                        <<  "."
-//                        <<  std::endl;
             return 2;
         }
         else if (
                     trans_mes.empty()
                 )
         {
-//            std::cout   <<  "Graph is non-transitive, example "
-//                        <<  not_trans_mes
-//                        <<  "."
-//                        <<  std::endl;
             return 1;
         }
         else
         {
-//            std::cout   <<  "Graph is transitive, example "
-//                        <<  trans_mes
-//                        <<  "."
-//                        <<  std::endl;
             return 0;
         }
     }//else
 }
-
-void  check_transitivity_of_graph_and_print_result( T_adj_matr    &   adj_matr )//I
-{
-    int     vertices_total      =   adj_matr.size();
-
-    T_str   trans_mes;
-    T_str   not_trans_mes;
-
-    for( T_vertex   v1   =   0; v1 < vertices_total; ++v1 )
-    {
-        for( T_vertex v2 = 0; v2 < vertices_total; ++v2 )
-        {
-            if( adj_matr[v1][v2] ==  0 )
-            {
-                continue;
-            }
-
-            for( T_vertex  v3 = 0; v3 < vertices_total; ++v3 )
-            {
-                if( adj_matr[v2][v3] == 0 )
-                {
-                    continue;
-                }
-                //Утверждение. Существуют ребра v1v2 и v2v3.
-                if  (
-                        adj_matr[v1][v3] != 0
-                    )
-                {
-                    if  (
-                            trans_mes.empty()
-                        )
-                    {
-                        trans_mes       =   get_path_mess( v1, v2, v3 );
-                    }
-                }
-                else
-                {
-                    if  (
-                            not_trans_mes.empty()
-                        )
-                    {
-                        not_trans_mes   =   get_path_mess( v1, v2, v3 );
-                    }
-                }//else
-            }//for
-        }//for
-    }//for
-
-    if  (
-                trans_mes       .empty()
-            &&  not_trans_mes   .empty()
-        )
-    {
-        std::cout   <<  "Graph is transitive, because there's no ways from two nodes."
-                    <<  std::endl;
-    }
-    else
-    {
-        if  (
-                    !trans_mes       .empty()
-                &&  !not_trans_mes   .empty()
-            )
-        {
-            std::cout   <<  "Graph is partly transitive:"
-                        <<  std::endl
-                        <<  "\transitivity:\t\t- "
-                        <<  trans_mes
-                        <<  std::endl
-                        <<  "\non-transitivity\t- "
-                        <<  not_trans_mes
-                        <<  "."
-                        <<  std::endl;
-        }
-        else if (
-                    trans_mes.empty()
-                )
-        {
-            std::cout   <<  "Graph is non-transitive, example "
-                        <<  not_trans_mes
-                        <<  "."
-                        <<  std::endl;
-        }
-        else
-        {
-            std::cout   <<  "Graph is transitive, example "
-                        <<  trans_mes
-                        <<  "."
-                        <<  std::endl;
-        }
-    }//else
-}
-/////////////////////////////////////////////////////////////////////////////////////////
 
 #endif // EXAMPLE_H

@@ -71,6 +71,21 @@ void CustomArray::insertKeepSorted(int element)
     m_data[index] = element;
 }
 
+int CustomArray::indexOf(int element)
+{
+    int l = 0, r = m_size;
+    while (l < r)
+    {
+        int mid = (l + r) / 2;
+        if (element > m_data[mid])
+            l = mid + 1;
+        else
+            r = mid;
+    }
+    if (m_data[l] == element) return l;
+    return -1;
+}
+
 void CustomArray::expand()
 {
     if (m_data_size == 0)

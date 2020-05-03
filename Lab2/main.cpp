@@ -67,5 +67,11 @@ int main()
 
     printArr(crossed);
 
+    for (unsigned i = 0; i < 40; ++i)
+    {
+        int el = rand() % 50 - 20;
+        cout << "Index of " << el << ": " << merged.indexOf(el) << endl;
+    }
+
     return 0;
 }

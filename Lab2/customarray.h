@@ -32,6 +32,8 @@ public:
     void sort();
     void insertKeepSorted(int element);
 
+    int indexOf(int element);
+
     static CustomArray Unite(const CustomArray &arrl, const CustomArray &arrr);
     static CustomArray Cross(const CustomArray &arrl, const CustomArray &arrr);
 

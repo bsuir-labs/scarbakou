@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+#include <string>
 #include "customarray.h"
 
 using namespace std;
@@ -79,6 +81,6 @@ int main()
         int el = rand() % 50 - 20;
         cout << "Index of " << el << ": " << merged.indexOf(el) << endl;
     }
-
+    system("pause");
     return 0;
 }

@@ -7,6 +7,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(Lab1
     main.cpp
-    example.h
-    matrices.h
     )

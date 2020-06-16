@@ -10,55 +10,55 @@
 
 ### Вход
 
-![img0]()
+![img0](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/0.png)
 
 ### Шаг 1
 
 Создаём и заполняем множество рёбер графа
 
-![img1]()
+![img1](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/1.png)
 
 ### Шаг 2
 
 Создаём и заполняем множество непроверенных вершин
 
-![img2]()
+![img2](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/2.png)
 
 ### Шаг 3
 
 Создаём множества TransitiveWays и NonTransitiveWays для транзитивных и нетранзитивных путей соответственно.
 
-![img3]()
+![img3](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/3.png)
 
 ### Шаг 4
 
 Из множества непроверенных вершин достаём вершину (А) и помещаем её в переменную Node1, удаляем эту вершину из множества NotChecked.
 
-![img4]()
+![img4](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/4.png)
 
 ### Шаг 5
 
 Так как путей из вершины А нет, достаём из множества непроверенных вершин следующую (В) и помещаем её в переменную Node1. Удаляем её из множества непроверенных вершин.
 
-![img5]()
+![img5](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/5.png)
 
 ### Шаг 6
 
 Рассматриваем вершины, связные с вершиной Node1. Помещаем первую связную вершину (A) в переменную Node2.
 
-![img6]()
+![img6](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/6.png)
 
 ### Шаг 7
 
 Из вершины Node2 (A) нет путей. Поэтому помещаем следующую связную с Node1 вершину (С) в переменную Node2
 
-![img7]()
+![img7](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/7.png)
 
 ### Шаг 8
 
 Рассматриваем вершины, связные с вершиной Node2. Помещаем первую связную вершину (А) в переменную Node3.
 
-![img8]()
+![img8](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/8.png)
 
 ### Шаг 9
 
@@ -66,13 +66,13 @@
 
 В переменную Node1 помещаем следующую вершину из множества непроверенных (D). В переменную Node2 помещаем вершину, связную с Node1 (A). Из Node2 нет исходящих рёбер.
 
-![img9]()
+![img9](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/9.png)
 
 ### Шаг 10
 
 Очищаем значения переменных Node1, Node2. Из множества непроверенных вершин достаём следующую вершину (C). Рассматриваем вершины, связные с Node1. В переменную Node2 помещаем вершину А. Из Node2 нет исходящих рёбер.
 
-![img10]()
+![img10](https://github.com/bsuir-labs/scarbakou/raw/dev-algo/Lab1/algo/exp/10.png)
 
 ### Шаг 11
 

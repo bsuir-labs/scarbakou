@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+// функция, которая печатаем массив
 void printArr(const std::string &name, const CustomArray &arr)
 {
     cout << name << ": ";
@@ -18,6 +18,9 @@ void printArr(const std::string &name, const CustomArray &arr)
     printArr(#x, x)
 
 
+// Ну а тут хз даже что писать,
+// Я не знал, что сюда впихивать, поэтому просто примеры работы с этим массивом
+// Изменение размеров, присваивание, сортировка и т.д.
 int main()
 {
     srand(time(nullptr));
